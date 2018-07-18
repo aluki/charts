@@ -6,10 +6,10 @@ metadata:
 {{ include "nexus.labels" . | indent 4 }}
 spec:
   ports:
-    - name: {{ .Values.nexusProxy.name }}
-      port: {{ .Values.nexusProxy.port }}
+    - name: {{ .Values.nexus.name }}
+      port: {{ .Values.nexus.port }}
       protocol: TCP
-      targetPort: {{ .Values.nexusProxy.port }}
+      targetPort: {{ .Values.nexus.port }}
   selector:
     app: {{ template "nexus.name" . }}
     release: {{ .Release.Name }}
